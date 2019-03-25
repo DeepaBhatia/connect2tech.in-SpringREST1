@@ -16,6 +16,10 @@ public class EmployeeServiceImpl implements EmployeeService{
 	EmployeeDAO empdao;
 	
 	
+	public void InsertEmployee()
+	{
+		empdao.addEmployee();
+	}
 	public Employee GetEmployees()
 	{
 		

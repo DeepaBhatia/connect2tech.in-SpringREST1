@@ -1,5 +1,6 @@
 package com.c2t.spring.dao;
 
+import java.sql.Date;
 import java.util.List;
 
 import org.hibernate.Query;
@@ -9,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.c2t.annotation.basic.Employee;
+import com.c2t.annotation.basic.Employee2;
 import com.c2t.annotation.basic.EmployeeVo;
 
 @Repository
@@ -56,6 +58,19 @@ public class EmployeeDAOImpl implements EmployeeDAO{
 		Employee emp =(Employee)s.get(Employee.class,eid);
 		s.delete(emp);
 		s.beginTransaction().commit();
+	}
+
+	@Override
+	public void addEmployee() {
+		// TODO Auto-generated method stub
+		Session s = sf.openSession();
+		Employee emp = new Employee("Samree", "kazi",new Date(1997/05/10), "788648");
+		Employee2 emp1 = new Employee2("Samree", "kazi",new Date(1997/05/10), "788648");
+		s.beginTransaction();
+		s.save(emp);
+		s.save(emp1);
+		s.beginTransaction().commit();
+		
 	}
 
 }

@@ -5,6 +5,7 @@ import com.c2t.annotation.basic.EmployeeVo;
 
 public interface EmployeeDAO {
 	
+	public void addEmployee();
 	public Employee GetEmployee();
 	public EmployeeVo GetAllEmployee();
 	public Employee GetById(Long eid);

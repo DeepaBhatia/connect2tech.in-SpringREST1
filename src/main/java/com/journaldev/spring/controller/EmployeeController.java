@@ -35,7 +35,14 @@ public class EmployeeController {
 	@Autowired
 	SessionFactory sf;
 	
-	Map<Integer,Employee> empdata = new HashMap<Integer, Employee>();
+	@RequestMapping(value ="/rest/emp/insert",method=RequestMethod.GET)
+	public @ResponseBody String insertEmployee()
+	{
+		service.InsertEmployee();
+		return "done";
+	}
+	
+	
 	@RequestMapping(value ="/rest/emp/dummy",method=RequestMethod.GET)
 	public @ResponseBody Employee getDummyEmployee()
 	{

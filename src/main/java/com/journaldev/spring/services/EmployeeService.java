@@ -4,6 +4,7 @@ import com.c2t.annotation.basic.Employee;
 import com.c2t.annotation.basic.EmployeeVo;
 
 public interface EmployeeService {
+	public void InsertEmployee();
 	public Employee GetEmployees();
 	public EmployeeVo GetallEmployees();
 	public Employee GetEmpbyId(Long eid);
